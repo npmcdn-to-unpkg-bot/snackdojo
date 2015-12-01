@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,300,400italic);
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+$sizes: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
+
+@each $size in $sizes {
+  #{$size} {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
