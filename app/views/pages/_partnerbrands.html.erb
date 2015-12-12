@@ -1,0 +1,15 @@
+<div class="m3">
+  <div class="container">
+    <div class="h1 bold center p2">
+      Partner brands
+    </div>
+    <div class="sm-col-10 mx-auto">
+      <div class="flex flex-wrap flex-justify">
+        <% Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'logos')}/*.{jpg,png}").map{|f| f.split('/').last}.shuffle.each do |logo| %>
+          <div class="m1" style="height:100px;width:100px;background: url('<%= asset_url("logos/#{logo}") %>') no-repeat center/contain">
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
