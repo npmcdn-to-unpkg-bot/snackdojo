@@ -40,6 +40,7 @@
       'name': 'plans and pricing',
       'url': window.location.pathname
     });
+    fbq('track', 'ViewedPricingPage');
     $('li.plan').click(function(e) {
       mixpanel.track('plan clicked', {
         'level': e.target.id

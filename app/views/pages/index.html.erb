@@ -30,6 +30,7 @@
       'name': 'home page',
       'url': window.location.pathname
     });
+    fbq('track', 'ViewedHomepage');
     $('#pricing').click(function(e) {
       mixpanel.track('pricing button clicked')
       return true
