@@ -10,13 +10,13 @@
           Select a plan to get started
         </p>
         <ul class="h3 list-reset">
-          <li class="m1 p2 border border-black pointer">
+          <li class="m1 p2 border border-black pointer plan" id="basic">
             <strong>Basic</strong> - 2 boxes a month, $55 per box
           </li>
-          <li class="m1 p2 border border-black pointer">
+          <li class="m1 p2 border border-black pointer plan" id="value">
             <strong>Value</strong> - 3 boxes a month, $50 per box
           </li>
-          <li class="m1 p2 border border-black pointer">
+          <li class="m1 p2 border border-black pointer plan" id="power">
             <strong>Power</strong> - 4 boxes a month, $50 per box
           </li>
         </ul>
@@ -25,7 +25,7 @@
             Not ready for a plan yet? Subscribe to our mailing list to receive special discounts from our partners.
           </p>
           <a href="http://eepurl.com/bJyH-1">
-            <div class="btn btn-primary center">
+            <div class="btn btn-primary center" id="mailing-list">
               Subscribe
             </div>
           </a>
@@ -33,6 +33,25 @@
       </div>
     </div>
   </div>
+  <script>
+
+  $(document).ready(function() {
+    mixpanel.track("page-view", {
+      'name': 'plans and pricing',
+      'url': window.location.pathname
+    });
+    $('li.plan').click(function(e) {
+      mixpanel.track('plan clicked', {
+        'level': e.target.id
+      })
+      return true
+    })
+    $('#mailing-list').click(function() {
+      mixpanel.track('subscribe to mailing list clicked')
+    })
+  })
+
+  </script>
   <%= render 'partnerbrands' %>
   <%= render 'footer' %>
 </div>
