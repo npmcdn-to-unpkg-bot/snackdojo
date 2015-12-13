@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get "/plans" => "pages#pricing", as: "pricing"
+  get "/almost-ready" => "pages#waiting_list", as: "almost_ready"
   # You can have the root of your site routed with "root"
   root 'pages#index'
 

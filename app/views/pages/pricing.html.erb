@@ -44,7 +44,8 @@
       mixpanel.track('plan clicked', {
         'level': e.target.id
       })
-      return true
+      e.preventDefault()
+      window.location = "<%= almost_ready_url %>"
     })
     $('#mailing-list').click(function() {
       mixpanel.track('subscribe to mailing list clicked')
