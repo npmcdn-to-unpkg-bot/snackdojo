@@ -27,6 +27,7 @@ gem 'puma'
 gem 'pg'
 gem 'rack-timeout'
 gem 'basscss-rails'
+gem "react_on_rails", "~> 2.0.0"
 
 group :production do
   gem 'rails_12factor'
