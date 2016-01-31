@@ -46,3 +46,5 @@ ruby "2.2.3"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'therubyracer', platforms: :ruby
