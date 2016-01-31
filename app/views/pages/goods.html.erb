@@ -1,0 +1,14 @@
+<div>
+  <div class="container">
+    <%= react_component("SnackDojoApp",
+                         {},
+                         prerender: false) %>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      fbq('trackCustom', 'ViewedInventoryPage');
+    })
+  </script>
+
+  <%= render 'footer' %>
+</div>

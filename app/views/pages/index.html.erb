@@ -1,25 +1,45 @@
 <div class="flex flex-column" style="min-height:100vh;">
   <div class="flex-auto" style="background: url(<%= asset_url 'stock/sliced-banana-orange-small.jpg' %>) no-repeat center/cover">
     <div class="container">
-      <div class="p3 mt3 sm-col-8 mx-auto" style="background-color:rgba(255, 255, 255, 0.8);">
-        <p class="h1 center">Healthy, balanced snacks and juices for new and expectant mothers</p>
-        <ul class="h3 list-reset">
-          <li class="p1">
-            <strong>First trimester</strong> - folate-rich foods for healthy brain and spinal cord development, and vitamin B6 to help with morning sickness.
-          </li>
-          <li class="p1">
-            <strong>Second trimester</strong> - foods with omega 3 fatty acids for brain devlopment, calcium and vitamin D for bones and teeth, and iron-rich foods for red blood cells.
-          </li>
-          <li class="p1">
-            <strong>Third trimester</strong> - energy boosting foods, foods with vitamin K to help with blood clotting, and extra snacks to meet your extra calorie requirements for third trimester.
-          </li>
-        </ul>
+      <div class="p3 mt3" style="background-color:rgba(255, 255, 255, 0.75);">
+        <p class="h1 center">Healthy snacks for clever moms</p>
+        <p class="h2">
+          From pre-pregnancy to postpartum recovery, get what you need to be healthy, energized and happy, straight to your door.
+        </p>
         <div class="center">
-          <a href="<%= pricing_path %>" id="pricing">
-            <div class="btn btn-primary button-big center">
-              Plans and pricing
+          <h3>Get started by selecting your current stage</h3>
+          <div class="flex flex-wrap flex-justify mb3">
+            <div class="p1 center border border-black flex-auto">
+              <div>
+                Planning for a baby
+              </div>
+              <img src="http://placehold.it/150x150" />
             </div>
-          </a>
+            <div class="p1 center border border-black flex-auto">
+              <div>
+                1st trimester
+              </div>
+              <img src="http://placehold.it/150x150" />
+            </div>
+            <div class="p1 center border border-black flex-auto">
+              <div>
+                2nd trimester
+              </div>
+              <img src="http://placehold.it/150x150" />
+            </div>
+            <div class="p1 center border border-black flex-auto">
+              <div>
+                3rd trimester
+              </div>
+              <img src="http://placehold.it/150x150" />
+            </div>
+            <div class="p1 center border border-black flex-auto">
+              <div>
+                Postpartum
+              </div>
+              <img src="http://placehold.it/150x150" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -30,11 +50,9 @@
       'name': 'home page',
       'url': window.location.pathname
     });
-    fbq('track', 'ViewedHomepage');
-    $('#pricing').click(function(e) {
-      mixpanel.track('pricing button clicked')
-      return true
-    })
+    fbq('trackCustom', 'ViewedHomepage');
+    // TODO: add mixpanel tracking to stage selection
+
   })
   </script>
   <%= render 'partnerbrands' %>
