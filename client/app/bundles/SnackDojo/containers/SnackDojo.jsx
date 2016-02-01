@@ -34,7 +34,7 @@ class SnackDojo extends React.Component {
     const currentPersona = $$snackDojoStore.get('currentPersona')
 
     return (
-      <div className="mb3">
+      <div className="mb4">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
       </div>
     );
