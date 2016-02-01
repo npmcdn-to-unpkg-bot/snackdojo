@@ -5,7 +5,7 @@ export default class PersonaSelector extends React.Component {
   static propTypes = {
     actions: PropTypes.objectOf(PropTypes.func),
     personas: PropTypes.array,
-    currentPersona: PropTypes.bool,
+    currentPersona: PropTypes.object,
   };
 
   constructor(props, context) {
@@ -18,10 +18,10 @@ export default class PersonaSelector extends React.Component {
   }
 
   // React will automatically provide us with the event `e`
-  selectPersona(e) {
+  selectPersona(persona) {
     // const name = e.target.value;
     // this.props.updateName(name);
-    console.log('persona selected', e)
+    this.props.actions.selectPersona(persona)
   }
 
   renderPersona = (persona) => {
@@ -40,8 +40,17 @@ export default class PersonaSelector extends React.Component {
   };
 
   renderSelectedPersona() {
+    const { currentPersona } = this.props
+
     return (
-      <div>Selected persona goes here</div>
+      <div className="flex flex-wrap flex-center">
+        <div>
+          {this.renderPersona(currentPersona)}
+        </div>
+        <div className="flex-auto px2">{
+          currentPersona.description}
+        </div>
+      </div>
     )
   }
 

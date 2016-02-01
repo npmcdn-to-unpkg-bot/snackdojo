@@ -8,11 +8,13 @@ export const $$initialState = Immutable.fromJS({
 });
 
 export default function snackDojoReducer($$state = $$initialState, action) {
-  const { type, name } = action;
+  const { type, name, persona } = action;
 
   switch (type) {
     case actionTypes.HELLO_WORLD_NAME_UPDATE:
       return $$state.set('name', name);
+    case actionTypes.SELECT_PERSONA:
+      return $$state.set('currentPersona', persona)
 
     default:
       return $$state;
