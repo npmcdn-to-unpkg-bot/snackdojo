@@ -6,3 +6,10 @@ export function updateName(name) {
     name,
   };
 }
+
+export function selectPersona(persona) {
+  return {
+    type: actionTypes.SELECT_PERSONA,
+    persona,
+  }
+}

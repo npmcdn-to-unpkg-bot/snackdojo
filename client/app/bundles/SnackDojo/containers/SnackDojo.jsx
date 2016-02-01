@@ -31,10 +31,11 @@ class SnackDojo extends React.Component {
     const { dispatch, $$snackDojoStore } = this.props
     const actions = bindActionCreators(snackDojoActionCreators, dispatch)
     const personas = $$snackDojoStore.get('personas').toJS()
+    const currentPersona = $$snackDojoStore.get('currentPersona')
 
     return (
       <div className="mb3">
-        <PersonaSelector data={personas} actions={actions} />
+        <PersonaSelector {...{ personas, actions, currentPersona }} />
       </div>
     );
   }
