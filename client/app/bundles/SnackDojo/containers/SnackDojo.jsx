@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
-import SnackDojoWidget from '../components/SnackDojoWidget';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Immutable from 'immutable';
-import * as snackDojoActionCreators from '../actions/snackDojoActionCreators';
+import React, { PropTypes } from 'react'
+import PersonaSelector from '../components/PersonaSelector'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import Immutable from 'immutable'
+import * as snackDojoActionCreators from '../actions/snackDojoActionCreators'
 
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
@@ -28,16 +28,14 @@ class SnackDojo extends React.Component {
   }
 
   render() {
-    const { dispatch, $$snackDojoStore } = this.props;
-    const actions = bindActionCreators(snackDojoActionCreators, dispatch);
-    const { updateName } = actions;
-    const name = $$snackDojoStore.get('name');
+    const { dispatch, $$snackDojoStore } = this.props
+    const actions = bindActionCreators(snackDojoActionCreators, dispatch)
+    const personas = $$snackDojoStore.get('personas').toJS()
 
-    // This uses the ES2015 spread operator to pass properties as it is more DRY
-    // This is equivalent to:
-    // <HelloWorldWidget $$helloWorldStore={$$helloWorldStore} actions={actions} />
     return (
-      <SnackDojoWidget {...{ updateName, name }} />
+      <div className="mb3">
+        <PersonaSelector data={personas} actions={actions} />
+      </div>
     );
   }
 }

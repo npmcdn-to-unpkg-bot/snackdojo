@@ -4,6 +4,7 @@ import actionTypes from '../constants/snackDojoConstants';
 
 export const $$initialState = Immutable.fromJS({
   name: '', // this is the default state that would be used if one were not passed into the store
+  personas: [],
 });
 
 export default function snackDojoReducer($$state = $$initialState, action) {
