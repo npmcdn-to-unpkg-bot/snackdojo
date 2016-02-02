@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Category.create([
+  {name: "Fruits & Nuts"},
+  {name: "Dairy"},
+  {name: "Veggies"},
+  {name: "Juices"},
+])
+
+Persona.create([
+  {name: "Prepregnant", description: "prepregant description"},
+  {name: "1st Trimester", description: "1st trimester description"},
+  {name: "2nd Trimester", description: "2nd trimester description"},
+  {name: "3rd Trimester", description: "3rd trimester description"},
+  {name: "Postpartum", description: "Postpartum description"},
+])
+
+Category.find_each do |c|
+  4.times.each do |i|
+    c.items.create(
+      name: "#{c.name} #{i}",
+      description: "#{c.name} #{i} description"
+    )
+  end
+end
