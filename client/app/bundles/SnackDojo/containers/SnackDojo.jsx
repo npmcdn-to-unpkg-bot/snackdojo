@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import PersonaSelector from '../components/PersonaSelector'
+import InventorySelector from '../components/InventorySelector'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Immutable from 'immutable'
@@ -31,11 +32,15 @@ class SnackDojo extends React.Component {
     const { dispatch, $$snackDojoStore } = this.props
     const actions = bindActionCreators(snackDojoActionCreators, dispatch)
     const personas = $$snackDojoStore.get('personas').toJS()
+    const items = $$snackDojoStore.get('items').toJS()
     const currentPersona = $$snackDojoStore.get('currentPersona')
 
     return (
-      <div className="mb4">
+      <div className="mb4 p2 px3">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
+        <div className="flex">
+          <InventorySelector {...{ items }} />
+        </div>
       </div>
     );
   }

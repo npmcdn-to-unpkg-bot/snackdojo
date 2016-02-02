@@ -1,7 +1,7 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description
+  attributes :id, :name, :description, :category
 
   def category
-    self.category.try(:name)
+    object.category.try(:name)
   end
 end
