@@ -1,8 +1,11 @@
 <div>
   <div class="container">
     <%= react_component("SnackDojoApp",
-                         {personas: @personas},
-                         prerender: false) %>
+      {
+        personas: @personas,
+        item: @items,
+      },
+      prerender: true) %>
   </div>
   <script type="text/javascript">
     $(document).ready(function() {

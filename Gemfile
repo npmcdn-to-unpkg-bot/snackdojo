@@ -27,7 +27,8 @@ gem 'puma'
 gem 'pg'
 gem 'rack-timeout'
 gem 'basscss-rails'
-gem "react_on_rails", "~> 2.0.0"
+gem "react_on_rails", "~> 2.3.0"
+gem "active_model_serializers"
 
 group :production do
   gem 'rails_12factor'
