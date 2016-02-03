@@ -12,12 +12,12 @@ export default class InventorySelector extends React.Component {
   }
 
   renderItem(item) {
-    const { id, name } = item
+    const { id, name, picture } = item
 
     return (
-      <div key={id} className="p1">
-        <img src="http://placehold.it/150x150" />
-        <div className="center">{name}</div>
+      <div key={id} className="p1 center" style={{ width: '150px', height: '150px' }}>
+        <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px' }}/>
+        <div>{name}</div>
       </div>
     )
   }

@@ -28,3 +28,14 @@ Category.find_each do |c|
     )
   end
 end
+
+juices = [
+  "http://drinkdailygreens.com/wp-content/themes/dailygreens/images/daily-greens-rejuvenate-bottle.png",
+  "http://drinkdailygreens.com/wp-content/themes/dailygreens/images/daily-greens-renew-bottle.png",
+  "http://drinkdailygreens.com/wp-content/themes/dailygreens/images/daily-greens-symmetry-bottle.png",
+  "http://drinkdailygreens.com/wp-content/themes/dailygreens/images/daily-greens-vitality-bottle.png",
+]
+
+Category.where(name: "Juices").first.items.each_with_index do |i, ix|
+  i.update picture: juices[ix%juices.length]
+end
