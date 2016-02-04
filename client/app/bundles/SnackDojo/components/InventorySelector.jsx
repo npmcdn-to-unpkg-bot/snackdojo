@@ -40,15 +40,10 @@ export default class InventorySelector extends React.Component {
     const groupedItems = _.groupBy(items, 'category')
 
     return (
-      <div className="clearfix">
-        <div className="sm-col-9 sm-col">
-          {
-            _.map(groupedItems, this.renderItemGroup)
-          }
-        </div>
-        <div className="sm-col-3 sm-col center">
-          <h3>Your box</h3>
-        </div>
+      <div>
+        {
+          _.map(groupedItems, this.renderItemGroup)
+        }
       </div>
     );
   }

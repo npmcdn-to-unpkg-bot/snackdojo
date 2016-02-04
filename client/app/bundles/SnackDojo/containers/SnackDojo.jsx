@@ -38,8 +38,13 @@ class SnackDojo extends React.Component {
     return (
       <div className="mb4 p2 px3">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
-        <div className="flex">
-          <InventorySelector {...{ items }} />
+        <div className="clearfix">
+          <div className="sm-col-9 sm-col">
+            <InventorySelector {...{ items }} />
+          </div>
+          <div className="sm-col-3 sm-col center">
+            <h3>Your box</h3>
+          </div>
         </div>
       </div>
     );
