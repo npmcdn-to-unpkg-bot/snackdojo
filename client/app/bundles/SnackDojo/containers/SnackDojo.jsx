@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react'
-import PersonaSelector from '../components/PersonaSelector'
-import InventorySelector from '../components/InventorySelector'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Immutable from 'immutable'
 import * as snackDojoActionCreators from '../actions/snackDojoActionCreators'
+import PersonaSelector from '../components/PersonaSelector'
+import InventorySelector from '../components/InventorySelector'
+import CurrentBox from '../components/CurrentBox'
 
 function select(state) {
   // Which part of the Redux global state does our component want to receive as props?
@@ -43,7 +44,7 @@ class SnackDojo extends React.Component {
             <InventorySelector {...{ items }} />
           </div>
           <div className="sm-col-3 sm-col center">
-            <h3>Your box</h3>
+            <CurrentBox />
           </div>
         </div>
       </div>
