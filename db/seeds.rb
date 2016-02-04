@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Category.create([
   {name: "Fruits & Nuts"},
   {name: "Dairy"},
@@ -38,4 +39,15 @@ juices = [
 
 Category.where(name: "Juices").first.items.each_with_index do |i, ix|
   i.update picture: juices[ix%juices.length]
+end
+
+dairy = [
+  "fage_blueberry.png",
+  "fage_honey.png",
+  "fage_raspberry.png",
+  "fage_strawberry.png",
+]
+
+Category.where(name: "Dairy").first.items.each_with_index do |i, ix|
+  i.update picture: "/assets/inventory/#{dairy[ix%dairy.length]}"
 end
