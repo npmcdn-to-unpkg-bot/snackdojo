@@ -15,8 +15,10 @@ export default class InventorySelector extends React.Component {
     const { id, name, picture } = item
 
     return (
-      <div key={id} className="p1 center" style={{ width: '150px', height: '150px' }}>
-        <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px' }}/>
+      <div key={id} className="p1 center">
+        <div className="flex flex-center" style={{ width: '150px', height: '150px' }}>
+          <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px' }} className="mx-auto" />
+        </div>
         <div>{name}</div>
       </div>
     )
@@ -24,7 +26,7 @@ export default class InventorySelector extends React.Component {
 
   renderItemGroup = (items, groupKey) => {
     return (
-      <div key={groupKey}>
+      <div key={groupKey} className="py2">
         <h3>{groupKey}</h3>
         <div className="flex flex-center flex-wrap">
           {items.map(this.renderItem)}
