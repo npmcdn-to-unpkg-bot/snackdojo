@@ -13,3 +13,10 @@ export function selectPersona(persona) {
     persona,
   }
 }
+
+export function addItemToCart(item) {
+  return {
+    type: actionTypes.ADDED_ITEM_TO_CART,
+    item,
+  }
+}

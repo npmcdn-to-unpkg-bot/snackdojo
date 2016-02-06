@@ -4,25 +4,26 @@ import _ from 'lodash'
 export default class InventorySelector extends React.Component {
   static propTypes = {
     actions: PropTypes.objectOf(PropTypes.func),
-    items: PropTypes.array,
+    inventory: PropTypes.array,
   };
 
   constructor(props, context) {
     super(props, context);
   }
 
-  renderItem(item) {
+  renderItem = (item) => {
     const { id, name, picture } = item
+    const { addItemToCart } = this.props.actions
 
     return (
-      <div key={id} className="p1 center flex-auto">
+      <div key={id} className="p1 center flex-auto" onClick={addItemToCart.bind(this, item)}>
         <div className="flex flex-center mx-auto" style={{ width: '150px', height: '150px' }}>
           <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px', height: 'auto', width: 'auto' }} className="mx-auto" />
         </div>
         <div className="py1">{name}</div>
       </div>
     )
-  }
+  };
 
   renderItemGroup = (items, groupKey) => {
     return (
@@ -36,8 +37,8 @@ export default class InventorySelector extends React.Component {
   };
 
   render() {
-    const { items } = this.props
-    const groupedItems = _.groupBy(items, 'category')
+    const { inventory } = this.props
+    const groupedItems = _.groupBy(inventory, 'category')
 
     return (
       <div>

@@ -33,18 +33,19 @@ class SnackDojo extends React.Component {
     const { dispatch, $$snackDojoStore } = this.props
     const actions = bindActionCreators(snackDojoActionCreators, dispatch)
     const personas = $$snackDojoStore.get('personas').toJS()
-    const items = $$snackDojoStore.get('items').toJS()
+    const inventory = $$snackDojoStore.get('inventory').toJS()
     const currentPersona = $$snackDojoStore.get('currentPersona')
+    const selectedItems = $$snackDojoStore.get('selectedItems')
 
     return (
       <div className="mb4 p2 px3">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
         <div className="clearfix">
           <div className="sm-col-9 sm-col">
-            <InventorySelector {...{ items }} />
+            <InventorySelector {...{ inventory, actions }} />
           </div>
           <div className="sm-col-3 sm-col center">
-            <CurrentBox />
+            <CurrentBox {...{ selectedItems }} />
           </div>
         </div>
       </div>
