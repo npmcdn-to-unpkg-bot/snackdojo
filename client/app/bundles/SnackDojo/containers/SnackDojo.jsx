@@ -44,7 +44,7 @@ class SnackDojo extends React.Component {
           <div className="sm-col-9 sm-col">
             <InventorySelector {...{ inventory, actions }} />
           </div>
-          <div className="sm-col-3 sm-col center">
+          <div className="sm-col-3 sm-col">
             <CurrentBox {...{ selectedItems }} />
           </div>
         </div>
