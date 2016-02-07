@@ -41,10 +41,10 @@ class SnackDojo extends React.Component {
       <div className="mb4 p2 px3">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
         <div className="clearfix">
-          <div className="sm-col-9 sm-col">
+          <div className="md-col-8 md-col">
             <InventorySelector {...{ inventory, actions }} />
           </div>
-          <div className="sm-col-3 sm-col">
+          <div className="md-col-4 md-col">
             <CurrentBox {...{ selectedItems }} />
           </div>
         </div>

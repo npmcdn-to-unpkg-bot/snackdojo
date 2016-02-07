@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import numeral from 'numeral'
 
 export default class CurrentBox extends React.Component {
   static propTypes = {
@@ -16,13 +17,31 @@ export default class CurrentBox extends React.Component {
     return (
       <div key={itemId} className="flex flex-center py1">
         <div className="p1 right-align" style={{ minWidth: '1rem' }}>{count}</div>
-        <div className="px1 center" style={{ height: '50px', width: '50px' }}>
-          <img src={item.picture} style={{ maxWidth: '50px', maxHeight: '50px' }} />
+        <div className="px1 flex flex-center" style={{ height: '50px', width: '50px' }}>
+          <img src={item.picture} className="mx-auto" style={{ maxWidth: '50px', maxHeight: '50px' }} />
         </div>
         <div className="flex-auto px1">{item.name}</div>
         <div>${item.price}</div>
       </div>
     )
+  }
+
+  renderSubtotal() {
+    const { selectedItems } = this.props
+    const subTotal = selectedItems.reduce((r, v, k) => {
+      return r + (v.count * v.item.price)
+    }, 0)
+
+    if (selectedItems.count() > 0) {
+      return (
+        <div className="border-top flex flex-center py1">
+          <div className="bold">Subtotal</div>
+          <div className="flex-auto right-align">
+            {numeral(subTotal).format('$0,0.00')}
+          </div>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -31,9 +50,10 @@ export default class CurrentBox extends React.Component {
     return (
       <div>
         <h3 className="center">Your box</h3>
-        <div className="border-left">
+        <div className="py1">
           {selectedItems.map((v, k) => this.renderLine(k, v))}
         </div>
+        {this.renderSubtotal()}
       </div>
     );
   }

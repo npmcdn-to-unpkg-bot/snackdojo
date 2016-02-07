@@ -53,6 +53,7 @@
     "loader-utils": "^0.2.11",
     "lodash": "^3.10.1",
     "mirror-creator": "0.0.1",
+    "numeral": "^1.5.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-on-rails": "2.0.2",
@@ -63,7 +64,7 @@
     "webpack": "^1.12.8"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta6",
+    "babel-eslint": "^4.1.8",
     "babel-plugin-react-transform": "^2.0.0",
     "css-loader": "^0.23.0",
     "eslint": "^1.10.3",
