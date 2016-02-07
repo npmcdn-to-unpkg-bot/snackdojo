@@ -25,7 +25,8 @@ Category.find_each do |c|
   8.times.each do |i|
     c.items.create(
       name: "#{c.name} #{i}",
-      description: "#{c.name} #{i} description"
+      description: "#{c.name} #{i} description",
+      price: rand(3..5) * 100 + rand(50..99)
     )
   end
 end

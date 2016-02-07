@@ -15,13 +15,13 @@ export default class CurrentBox extends React.Component {
     const { count, item } = data
 
     return (
-      <div key={itemId} className="flex flex-center py1">
+      <div key={itemId} className="flex flex-center py1 h5">
         <div className="p1 right-align" style={{ minWidth: '1rem' }}>{count}</div>
         <div className="px1 flex flex-center" style={{ height: '50px', width: '50px' }}>
           <img src={item.picture} className="mx-auto" style={{ maxWidth: '50px', maxHeight: '50px' }} />
         </div>
         <div className="flex-auto px1">{item.name}</div>
-        <div>${item.price}</div>
+        <div>{numeral(item.price / 100 * count).format('$0,0.00')}</div>
       </div>
     )
   }
@@ -37,7 +37,7 @@ export default class CurrentBox extends React.Component {
         <div className="border-top flex flex-center py1">
           <div className="bold">Subtotal</div>
           <div className="flex-auto right-align">
-            {numeral(subTotal).format('$0,0.00')}
+            {numeral(subTotal / 100).format('$0,0.00')}
           </div>
         </div>
       )
