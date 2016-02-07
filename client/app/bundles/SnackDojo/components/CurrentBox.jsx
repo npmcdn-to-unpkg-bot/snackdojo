@@ -48,7 +48,7 @@ export default class CurrentBox extends React.Component {
     const { selectedItems } = this.props
 
     return (
-      <div>
+      <div className="py2">
         <h3 className="center">Your box</h3>
         <div className="py1">
           {selectedItems.map((v, k) => this.renderLine(k, v))}
