@@ -38,7 +38,7 @@ class SnackDojo extends React.Component {
     const selectedItems = $$snackDojoStore.get('selectedItems')
 
     return (
-      <div className="mb4 p2 px3">
+      <div className="mb4 px3">
         <PersonaSelector {...{ personas, actions, currentPersona }} />
         <div className="clearfix">
           <div className="md-col-8 md-col">
