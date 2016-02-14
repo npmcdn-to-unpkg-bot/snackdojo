@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  personas:
+    prepregnant: prepregnant description yaml
+    first_trimester: first_trimester description yaml
+    second_trimester: second_trimester description yaml
+    third_trimester: third_trimester description yaml
+    postpartum: postpartum description yaml
