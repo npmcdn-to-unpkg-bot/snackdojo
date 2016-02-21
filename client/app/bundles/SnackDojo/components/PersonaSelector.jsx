@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
+import Markdown from './ui/Markdown'
 
 export default class PersonaSelector extends React.Component {
   static propTypes = {
@@ -49,8 +50,8 @@ export default class PersonaSelector extends React.Component {
           <div className="p1 center border border-black">
             <img src="http://placehold.it/150x150" />
           </div>
-          <div className="flex-auto px2">{
-            currentPersona.description}
+          <div className="flex-auto px2">
+            <Markdown markdown={currentPersona.description} />
           </div>
         </div>
       </div>

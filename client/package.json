@@ -76,6 +76,7 @@
     "file-loader": "^0.8.4",
     "jade": "^1.11.0",
     "jscs": "^2.8.0",
+    "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
     "react-transform-hmr": "^1.0.1",
     "sass-loader": "^3.1.1",
