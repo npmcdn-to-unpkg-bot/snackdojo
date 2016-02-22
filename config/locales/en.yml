@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   personas:
-    prepregnant: For women who are planning to have a baby, the three most important things to focus on are healthy ovulation, hormonal health, and stress reduction. Additionally, it is crucial to reduce the amount of body toxins by reducing one’s consumption of fast foods, oily foods, and fried foods. <br> <br> In this phase, we recommend foods that will help reduce your cortisol levels (stress hormones), fertility boosting foods, and foods with vitamins and nutrients for healthy pregnancy.
+    prepregnant: For women who are planning to have a baby, the three most important things to focus on are healthy ovulation, hormonal health, and stress reduction. Additionally, it is crucial to reduce the amount of body toxins by reducing one’s consumption of fast foods, oily foods, and fried foods. <br /> <br />In this phase, we recommend foods that will help reduce your cortisol levels (stress hormones), fertility boosting foods, and foods with vitamins and nutrients for healthy pregnancy.
     first_trimester: first_trimester description yaml
     second_trimester: second_trimester description yaml
     third_trimester: third_trimester description yaml

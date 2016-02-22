@@ -47,7 +47,7 @@ export default class PersonaSelector extends React.Component {
       <div>
         <h2>{currentPersona.name} <span className="h5 muted pointer" onClick={this.selectPersona.bind(this, null)}>(change)</span></h2>
         <div className="flex flex-wrap flex-center">
-          <div className="p1 center border border-black">
+          <div className="p1 flex-none center border border-black">
             <img src="http://placehold.it/150x150" />
           </div>
           <div className="flex-auto px2">
@@ -59,7 +59,7 @@ export default class PersonaSelector extends React.Component {
   }
 
   renderPersonaList() {
-    const { personas } = this.props
+    const { personas, currentPersona } = this.props
 
     return (
       <div>
