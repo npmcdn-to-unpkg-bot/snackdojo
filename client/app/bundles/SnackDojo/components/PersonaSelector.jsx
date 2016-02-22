@@ -46,7 +46,7 @@ export default class PersonaSelector extends React.Component {
     return (
       <div>
         <h2>{currentPersona.name} <span className="h5 muted pointer" onClick={this.selectPersona.bind(this, null)}>(change)</span></h2>
-        <div className="flex flex-wrap flex-center">
+        <div className="flex flex-center">
           <div className="p1 flex-none center border border-black">
             <img src="http://placehold.it/150x150" />
           </div>
@@ -59,12 +59,12 @@ export default class PersonaSelector extends React.Component {
   }
 
   renderPersonaList() {
-    const { personas, currentPersona } = this.props
+    const { personas } = this.props
 
     return (
       <div>
         <h2>Select your stage</h2>
-        <div className="flex flex-wrap flex-justify mb3">
+        <div className="flex flex-justify mb3 flex-wrap">
           {personas.map(this.renderPersona)}
         </div>
       </div>
