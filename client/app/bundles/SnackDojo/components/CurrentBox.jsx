@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import numeral from 'numeral'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class CurrentBox extends React.Component {
   static propTypes = {
@@ -51,7 +52,9 @@ export default class CurrentBox extends React.Component {
       <div className="py2">
         <h3 className="center">Your box</h3>
         <div className="py1">
-          {selectedItems.map((v, k) => this.renderLine(k, v))}
+          <ReactCSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+            {selectedItems.map((v, k) => this.renderLine(k, v))}
+          </ReactCSSTransitionGroup>
         </div>
         {this.renderSubtotal()}
       </div>

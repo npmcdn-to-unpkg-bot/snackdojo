@@ -15,3 +15,22 @@ $sizes: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
 .pointer {
   cursor: pointer;
 }
+
+// animations
+.fadeIn-enter {
+  opacity: 0.01;
+}
+
+.fadeIn-enter.fadeIn-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fadeIn-leave {
+  opacity: 1;
+}
+
+.fadeIn-leave.fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
