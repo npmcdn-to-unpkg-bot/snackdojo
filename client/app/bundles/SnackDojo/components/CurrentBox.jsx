@@ -33,7 +33,7 @@ export default class CurrentBox extends React.Component {
       return r + (v.count * v.item.price)
     }, 0)
 
-    if (selectedItems.count() > 0) {
+    if (true || selectedItems.count() > 0) {
       return (
         <div className="border-top flex flex-center py1">
           <div className="bold">Subtotal</div>
@@ -45,16 +45,25 @@ export default class CurrentBox extends React.Component {
     }
   }
 
-  render() {
+  renderSelectedItems() {
     const { selectedItems } = this.props
 
+    return (
+      <div>
+        <ReactCSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          {selectedItems.map((v, k) => this.renderLine(k, v))}
+        </ReactCSSTransitionGroup>
+        {selectedItems.count() > 0 ? null : <div className="gray center py2">Empty box!<br /> Add some items now</div>}
+      </div>
+    )
+  }
+
+  render() {
     return (
       <div className="py2">
         <h3 className="center">Your box</h3>
         <div className="py1">
-          <ReactCSSTransitionGroup transitionName="fadeIn" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-            {selectedItems.map((v, k) => this.renderLine(k, v))}
-          </ReactCSSTransitionGroup>
+          {this.renderSelectedItems()}
         </div>
         {this.renderSubtotal()}
       </div>

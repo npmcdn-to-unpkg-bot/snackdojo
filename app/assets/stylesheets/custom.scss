@@ -17,6 +17,15 @@ $sizes: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
 }
 
 // animations
+.fadeIn-appear {
+  opacity: 0.01;
+}
+
+.fadeIn-appear.fadeIn-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
 .fadeIn-enter {
   opacity: 0.01;
 }
