@@ -50,7 +50,7 @@ $sizes: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
 .hover-wrapper:hover .hover-invisible { visibility: hidden }
 
 .hover-show { display: none }
-.hover-wrapper:hover .hover-show { display: block }
+.hover-wrapper:hover .hover-show { display: inherit }
 .hover-wrapper:hover .hover-hide { display: none }
 
 .border-whitesmoke {

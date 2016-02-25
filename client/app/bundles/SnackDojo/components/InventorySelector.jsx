@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
+import $ from 'jquery'
 
 export default class InventorySelector extends React.Component {
   static propTypes = {
@@ -9,6 +10,12 @@ export default class InventorySelector extends React.Component {
 
   constructor(props, context) {
     super(props, context);
+  }
+
+  componentDidMount() {
+    $('.hover-wrapper .hover-show').each((i, e) => {
+      $(e).css({ minHeight: $(e).siblings('.hover-hide').height() })
+    })
   }
 
   renderItem = (item) => {
@@ -23,7 +30,7 @@ export default class InventorySelector extends React.Component {
           </div>
           <div className="py1">{name}</div>
         </div>
-        <div className="hover-show mx-auto">
+        <div className="hover-show flex flex-center mx-auto">
           <div className="h5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at quam felis. Sed sodales erat nulla, a auctor augue efficitur id. Vestibulum consectetur aliquet mollis.
           </div>
@@ -36,7 +43,7 @@ export default class InventorySelector extends React.Component {
     const length = 12 / items.length
 
     return (
-      <div className="clearfix flex flex-stretch">
+      <div className="clearfix sm-flex flex-stretch">
         {items.map(i => {
           return (
             <div className={`sm-col sm-col-${length} flex flex-stretch`}>
