@@ -47,11 +47,28 @@ export default class PersonaSelector extends React.Component {
       <div>
         <h2>{currentPersona.name} <span className="h5 muted pointer" onClick={this.selectPersona.bind(this, null)}>(change)</span></h2>
         <div className="flex flex-center">
-          <div className="p1 flex-none center border border-black">
+          <div className="p1 flex-none center border border-black sm-show">
             <img src="http://placehold.it/150x150" />
           </div>
           <div className="flex-auto px2">
             <Markdown markdown={currentPersona.description} />
+          </div>
+        </div>
+        <div>
+          <h4>Recommended Items</h4>
+          <div className="flex flex-center">
+            <div>
+              <img src="http://placehold.it/50x50" />
+              <p>Complex carbs (sustained energy throughout the day, low glycemic index)</p>
+            </div>
+            <div>
+              <img src="http://placehold.it/50x50" />
+              <p>Plant proteins (sustained energy throughout the day, low glycemic index)</p>
+            </div>
+            <div>
+              <img src="http://placehold.it/50x50" />
+              <p>Omega-3 fatty acids (reduce risk of preterm birth and preeclampsia)</p>
+            </div>
           </div>
         </div>
       </div>

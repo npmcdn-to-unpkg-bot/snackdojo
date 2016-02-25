@@ -60,8 +60,8 @@ export default class CurrentBox extends React.Component {
 
   render() {
     return (
-      <div className="py2">
-        <h3 className="center">Your box</h3>
+      <div className="py2 ml2">
+        <h3>Your box</h3>
         <div className="py1">
           {this.renderSelectedItems()}
         </div>

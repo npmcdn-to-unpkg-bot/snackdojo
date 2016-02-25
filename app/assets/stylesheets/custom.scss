@@ -43,3 +43,20 @@ $sizes: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6';
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+// hover visibility
+.hover-visible { visibility: hidden }
+.hover-wrapper:hover .hover-visible { visibility: visible }
+.hover-wrapper:hover .hover-invisible { visibility: hidden }
+
+.hover-show { display: none }
+.hover-wrapper:hover .hover-show { display: block }
+.hover-wrapper:hover .hover-hide { display: none }
+
+.border-whitesmoke {
+  border-color: #F5F5F5;
+}
+
+.outline {
+  outline: 1px solid #F5F5F5;
+}
