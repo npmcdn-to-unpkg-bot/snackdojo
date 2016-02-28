@@ -22,7 +22,7 @@ Persona.create([
 ])
 
 Category.find_each do |c|
-  8.times.each do |i|
+  9.times.each do |i|
     c.items.create(
       name: "#{c.name} #{i}",
       description: "#{c.name} #{i} description",
@@ -50,7 +50,7 @@ dairy = [
 ]
 
 Category.where(name: "Dairy").first.items.each_with_index do |i, ix|
-  i.update picture: "/assets/inventory/#{dairy[ix%dairy.length]}"
+  i.update picture: "inventory/#{dairy[ix%dairy.length]}"
 end
 
 fruits_nuts = [
@@ -65,5 +65,5 @@ fruits_nuts = [
 ]
 
 Category.where(name: "Fruits & Nuts").first.items.each_with_index do |i, ix|
-  i.update picture: "/assets/inventory/#{fruits_nuts[ix%fruits_nuts.length]}"
+  i.update picture: "inventory/#{fruits_nuts[ix%fruits_nuts.length]}"
 end

@@ -1,6 +1,4 @@
 class ItemSerializer < ActiveModel::Serializer
-  include ActionView::Helpers::AssetTagHelper
-
   attributes :id, :name, :description, :category, :picture, :price
 
   def category
@@ -12,6 +10,6 @@ class ItemSerializer < ActiveModel::Serializer
   end
 
   def picture
-    asset_url(object.picture)
+    scope.image_url(object.picture)
   end
 end

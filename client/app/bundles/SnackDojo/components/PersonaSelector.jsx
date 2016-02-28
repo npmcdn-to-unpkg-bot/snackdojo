@@ -46,8 +46,8 @@ export default class PersonaSelector extends React.Component {
     return (
       <div>
         <h2>{currentPersona.name} <span className="h5 muted pointer" onClick={this.selectPersona.bind(this, null)}>(change)</span></h2>
-        <div className="clearfix sm-flex flex-center">
-          <div className="sm-col sm-col-6 mr2">
+        <div className="clearfix sm-flex flex-stretch">
+          <div className="sm-col sm-col-6 mr2 py2">
             <Markdown markdown={currentPersona.description} />
           </div>
           <div className="sm-col sm-col-6 mb3 p2 border">
