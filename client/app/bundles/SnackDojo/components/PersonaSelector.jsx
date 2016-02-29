@@ -63,7 +63,7 @@ export default class PersonaSelector extends React.Component {
             <span className="h4 bold">Recommended Items</span>
             {currentPersona.recommended_items.map(i => {
               return (
-                <div className="flex flex-center hover-wrapper pointer" onClick={addItemToCart.bind(this, i)}>
+                <div className="flex flex-center hover-wrapper pointer" onClick={addItemToCart.bind(this, i, 1)}>
                   <div className="p1 flex-none center flex flex-center" style={{ width: 50, height: 50 }}>
                     <img src={i.picture || 'http://placehold.it/50x50'} style={{ maxHeight: 50 }} className="mx-auto" />
                   </div>
