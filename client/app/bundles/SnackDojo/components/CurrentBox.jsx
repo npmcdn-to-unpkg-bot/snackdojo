@@ -14,15 +14,23 @@ export default class CurrentBox extends React.Component {
 
   renderLine(itemId, data) {
     const { count, item } = data
+    const { addItemToCart } = this.props.actions
 
     return (
-      <div key={itemId} className="flex flex-center py1 h5">
+      <div key={itemId} className="flex flex-center py1 h5 hover-wrapper">
         <div className="p1 right-align" style={{ minWidth: '1rem' }}>{count}</div>
         <div className="px1 flex flex-center" style={{ height: '50px', width: '50px' }}>
           <img src={item.picture} className="mx-auto" style={{ maxWidth: '50px', maxHeight: '50px' }} />
         </div>
         <div className="flex-auto px1">{item.name}</div>
-        <div>{numeral(item.price / 100 * count).format('$0,0.00')}</div>
+        <div>
+          <div className="hover-show">
+            <div className="p1 h5 align-right pointer muted" onClick={addItemToCart.bind(this, item, -1)}>Remove</div>
+          </div>
+          <div className="hover-hide">
+            {numeral(item.price / 100 * count).format('$0,0.00')}
+          </div>
+        </div>
       </div>
     )
   }
@@ -46,7 +54,8 @@ export default class CurrentBox extends React.Component {
   }
 
   renderSelectedItems() {
-    const { selectedItems } = this.props
+    let { selectedItems } = this.props
+    selectedItems = selectedItems.filter(x => x.count > 0)
 
     return (
       <div>

@@ -24,7 +24,7 @@ export default class InventorySelector extends React.Component {
     const { addItemToCart } = this.props.actions
 
     return (
-      <div key={id} className="p1 center pointer hover-wrapper flex flex-center border border-whitesmoke flex-auto" onClick={addItemToCart.bind(this, item)}>
+      <div key={id} className="p1 center pointer hover-wrapper flex flex-center border border-whitesmoke flex-auto" onClick={addItemToCart.bind(this, item, 1)}>
         <div className="hover-hide mx-auto">
           <div className="flex flex-center mx-auto" style={{ width: '150px', height: '150px' }}>
             <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px', height: 'auto', width: 'auto' }} className="mx-auto" />

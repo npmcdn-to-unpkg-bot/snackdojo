@@ -9,7 +9,7 @@ export const $$initialState = Immutable.fromJS({
 });
 
 export default function snackDojoReducer($$state = $$initialState, action) {
-  const { type, name, persona, item } = action;
+  const { type, name, persona, item, qty } = action;
 
   switch (type) {
     case actionTypes.HELLO_WORLD_NAME_UPDATE:
@@ -20,7 +20,7 @@ export default function snackDojoReducer($$state = $$initialState, action) {
       const prevCount = $$state.getIn(['selectedItems', item.id], {}).count || 0
       return $$state.setIn(['selectedItems', item.id], {
         item,
-        count: prevCount + 1,
+        count: prevCount + (qty || 1),
       })
     default:
       return $$state;

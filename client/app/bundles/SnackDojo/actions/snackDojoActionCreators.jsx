@@ -14,9 +14,10 @@ export function selectPersona(persona) {
   }
 }
 
-export function addItemToCart(item) {
+export function addItemToCart(item, qty) {
   return {
     type: actionTypes.ADDED_ITEM_TO_CART,
     item,
+    qty,
   }
 }
