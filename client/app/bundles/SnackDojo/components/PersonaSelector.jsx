@@ -52,6 +52,16 @@ export default class PersonaSelector extends React.Component {
           </div>
           <div className="sm-col sm-col-6 mb3 p2 border">
             <span className="h4 bold">Recommended Items</span>
+            {currentPersona.recommended_items.map(i => {
+              return (
+                <div className="flex flex-center">
+                  <div className="p1 flex-none center" style={{ width: 50 }}>
+                    <img src={i.picture || 'http://placehold.it/50x50'} style={{ maxHeight: 50 }}/>
+                  </div>
+                  <div>Complex carbs (sustained energy throughout the day, low glycemic index)</div>
+                </div>
+              )
+            })}
             <div className="flex flex-center">
               <img src="http://placehold.it/50x50" className="p1 flex-none" />
               <div>Complex carbs (sustained energy throughout the day, low glycemic index)</div>
