@@ -39,7 +39,9 @@ export default class InventorySelector extends React.Component {
             <div className="h5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at quam felis. Sed sodales erat nulla, a auctor augue efficitur id. Vestibulum consectetur aliquet mollis.
             </div>
-            <div className="mt1 px2 py1 white bg-orange h5">Add to box</div>
+            <button className="btn btn-primary bg-orange white h5 mt1">
+              Add to box
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
 import Markdown from './ui/Markdown'
+import $ from 'jquery'
+import numeral from 'numeral'
 
 export default class PersonaSelector extends React.Component {
   static propTypes = {
@@ -16,6 +18,12 @@ export default class PersonaSelector extends React.Component {
     // the methods defined here would not refer to the component's class, not the component
     // instance itself.
     _.bindAll(this, 'selectPersona');
+  }
+
+  componentDidMount() {
+    $('.hover-wrapper .hover-show').each((i, e) => {
+      $(e).css({ minHeight: $(e).siblings('.hover-hide').height() })
+    })
   }
 
   // React will automatically provide us with the event `e`
@@ -41,7 +49,8 @@ export default class PersonaSelector extends React.Component {
   };
 
   renderSelectedPersona() {
-    const { currentPersona } = this.props
+    const { currentPersona, actions } = this.props
+    const { addItemToCart } = actions
 
     return (
       <div>
@@ -54,13 +63,18 @@ export default class PersonaSelector extends React.Component {
             <span className="h4 bold">Recommended Items</span>
             {currentPersona.recommended_items.map(i => {
               return (
-                <div className="flex flex-center">
+                <div className="flex flex-center hover-wrapper pointer" onClick={addItemToCart.bind(this, i)}>
                   <div className="p1 flex-none center flex flex-center" style={{ width: 50, height: 50 }}>
                     <img src={i.picture || 'http://placehold.it/50x50'} style={{ maxHeight: 50 }} className="mx-auto" />
                   </div>
-                  <div className="h4 px1">
-                    <div>{i.name}</div>
+                  <div className="h5 px1 hover-hide">
+                    <div>{i.name} <span className="black muted px1">{numeral(i.price / 100).format('$0,0.00')}</span></div>
                     <div>{i.description}</div>
+                  </div>
+                  <div className="hover-show px1">
+                    <button className="btn btn-primary bg-orange white h5">
+                      Add to box
+                    </button>
                   </div>
                 </div>
               )
