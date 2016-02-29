@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
 import $ from 'jquery'
+import numeral from 'numeral'
 
 export default class InventorySelector extends React.Component {
   static propTypes = {
@@ -28,11 +29,17 @@ export default class InventorySelector extends React.Component {
           <div className="flex flex-center mx-auto" style={{ width: '150px', height: '150px' }}>
             <img src={picture || 'http://placehold.it/150x150'} style={{ maxWidth: '150px', maxHeight: '150px', height: 'auto', width: 'auto' }} className="mx-auto" />
           </div>
-          <div className="py1">{name}</div>
+          <div className="py1 h5">
+            <strong>{name}</strong><br />
+            {numeral(item.price / 100).format('$0,0.00')}
+          </div>
         </div>
         <div className="hover-show flex flex-center mx-auto">
-          <div className="h5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at quam felis. Sed sodales erat nulla, a auctor augue efficitur id. Vestibulum consectetur aliquet mollis.
+          <div>
+            <div className="h5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at quam felis. Sed sodales erat nulla, a auctor augue efficitur id. Vestibulum consectetur aliquet mollis.
+            </div>
+            <div className="mt1 px2 py1 white bg-orange h5">Add to box</div>
           </div>
         </div>
       </div>
