@@ -55,25 +55,16 @@ export default class PersonaSelector extends React.Component {
             {currentPersona.recommended_items.map(i => {
               return (
                 <div className="flex flex-center">
-                  <div className="p1 flex-none center" style={{ width: 50 }}>
-                    <img src={i.picture || 'http://placehold.it/50x50'} style={{ maxHeight: 50 }}/>
+                  <div className="p1 flex-none center flex flex-center" style={{ width: 50, height: 50 }}>
+                    <img src={i.picture || 'http://placehold.it/50x50'} style={{ maxHeight: 50 }} className="mx-auto" />
                   </div>
-                  <div>Complex carbs (sustained energy throughout the day, low glycemic index)</div>
+                  <div className="h4 px1">
+                    <div>{i.name}</div>
+                    <div>{i.description}</div>
+                  </div>
                 </div>
               )
             })}
-            <div className="flex flex-center">
-              <img src="http://placehold.it/50x50" className="p1 flex-none" />
-              <div>Complex carbs (sustained energy throughout the day, low glycemic index)</div>
-            </div>
-            <div className="flex flex-center">
-              <img src="http://placehold.it/50x50" className="p1 flex-none" />
-              <div>Plant proteins (sustained energy throughout the day, low glycemic index)</div>
-            </div>
-            <div className="flex flex-center">
-              <img src="http://placehold.it/50x50" className="p1 flex-none" />
-              <div>Omega-3 fatty acids (reduce risk of preterm birth and preeclampsia)</div>
-            </div>
           </div>
         </div>
       </div>
