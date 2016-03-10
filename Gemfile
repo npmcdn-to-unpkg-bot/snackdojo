@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,7 +27,7 @@ gem 'puma'
 gem 'pg'
 gem 'rack-timeout'
 gem 'basscss-rails'
-gem "react_on_rails", "~> 2.3.0"
+gem "react_on_rails"
 gem "active_model_serializers"
 
 group :production do

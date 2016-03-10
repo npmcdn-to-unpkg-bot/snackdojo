@@ -3,7 +3,7 @@
     <div class="mt2 p1 px3" style="width:10rem;">
       <%= image_tag asset_url('logo.svg') %>
     </div>
-    <%= react_component("SnackDojoApp",
+    <%= react_component("SnackDojoApp", props:
       {
         personas: @personas,
         inventory: @inventory,
